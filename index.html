@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Házi feladat: függvények, ciklusok</h2>
+    <b>
+      1. feladat: készíts függvényt ami egy neveket tartalmazó tömb-ben
+      megmondja hogy van e benne Gábor és kiírja azt is, hogy hányadik elem a
+      tömbben a Gábor. Feltételezzük hogy csak egyetlen Gábor elem nevű van a
+      tömbben. const names = ['István', 'Katalin', 'Attila', 'Gábor', 'Péter',
+      'Anna', 'Kitti' ];
+    </b>
+
+    <!-- ez a HTML adatkiíratáshoz kell -->
+    <p style="background-color: yellowgreen" id="data"></p>
+
+    <script>
+      const names = [
+        "István",
+        "Katalin",
+        "Attila",
+        "Gábor",
+        "Péter",
+        "Anna",
+        "Kitti",
+      ];
+      const a = [];
+
+      // ez a ciklus végigmegy a tömb elemein, és megvizsgálja hogy van e "Gábor" nevű, és ha talált, akkor az indexét beteszi egy "a" nevű tömbbe
+      for (i = 0; i < names.length; i++) {
+        if (names[i] === "Gábor") {
+          a.push(i);
+        }
+      }
+
+      // a következő szelekció megnézi, hogy volt e "Gábor", és kiíratja az eredményt
+      if (a[0] !== undefined) {
+        console.log(
+          'A tömbben van "Gábor" nevű elem, a következő indexxel: ' +
+            "[" +
+            a +
+            "]" +
+            "!"
+        );
+        document.getElementById("data").innerHTML =
+          'A tömbben van "Gábor" nevű elem, a következő indexxel: ' +
+          "[" +
+          a +
+          "]" +
+          "!";
+      } else {
+        console.log('A tömbben nincs "Gábor" nevű elem!');
+        document.getElementById("data").innerHTML =
+          'A tömbben nincs "Gábor" nevű elem!';
+      }
+    </script>
+  </body>
+</html>
